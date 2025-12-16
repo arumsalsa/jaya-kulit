@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Jaya Kulit</title>
-    @vite('resources/css/app.css')
+    @vite('../resources/css/app.css')
     <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
 <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
 </head>
