@@ -30,7 +30,8 @@
                 {{-- Gambar --}}
                 <td class="p-3">
                     @if($product->image)
-                        <img src="{{ asset('storage/'.$product->image) }}"
+    <img src="{{ $product->image }}" alt="{{ $product->name }}">
+@endif
                              class="w-16 h-16 object-cover rounded">
                     @else
                         <div class="w-16 h-16 bg-gray-200 flex items-center justify-center rounded text-xs">

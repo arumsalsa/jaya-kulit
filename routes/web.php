@@ -17,7 +17,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/service', function () {
     $about = \App\Models\AboutUs::first();
-    return view('user.service', compact('about'));
+    return view('user.xservice', compact('about'));
 });
 
 Route::get('/about', [AboutPageController::class, 'index']);

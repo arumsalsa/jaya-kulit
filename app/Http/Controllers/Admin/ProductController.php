@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Cloudinary\Api\Upload\UploadApi;
 
 class ProductController extends Controller
 {
@@ -51,14 +52,12 @@ class ProductController extends Controller
         $data['is_featured'] = $request->has('is_featured');
 
         // UPLOAD IMAGE
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('products', 'public');
-        }
+        $uploaded = (new UploadApi())->upload(
+    $request->file('image')->getRealPath(),
+    ['folder' => 'products']
+);
 
-        Product::create($data);
-
-        return redirect('/admin/products')
-            ->with('success', 'Produk berhasil ditambahkan');
+$product->image = $uploaded['secure_url'];
     }
 
     // ===============================
